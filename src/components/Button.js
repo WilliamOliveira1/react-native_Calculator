@@ -13,8 +13,9 @@ export default props => {
     if(props.operation) stylesButton.push(styles.operationButton) // if double set on import file the style will change to operationButton
 
     return (
-        <TouchableHighlight onPress={props.onClick}>
-            <Text style={stylesButton}>{props.label}</Text>
+        <TouchableHighlight 
+        onPress={() => props.onClick(props.label)}>
+                <Text style={stylesButton}>{props.label}</Text>   
         </TouchableHighlight>
     )
 }
