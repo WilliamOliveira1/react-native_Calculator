@@ -1,4 +1,5 @@
 {
   "name": "calculator",
-  "displayName": "calculator"
+  "displayName": "calculator",
+  "orientation": "portrait"
 }
