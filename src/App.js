@@ -1,5 +1,5 @@
 import React from 'react';
-import {SafeAreaView, StyleSheet, Text, View} from 'react-native'
+import {SafeAreaView, StyleSheet, View} from 'react-native'
 
 import Button from './components/Button'
 
@@ -34,8 +34,8 @@ const styles = StyleSheet.create ({
         flex: 1,
     },
     buttons: {
-        flexDirection:'row',
-        flexWrap: 'wrap'
+        flexDirection:'row', //This set the buttons on row 
+        flexWrap: 'wrap', //This set when the buttons cover all the width the next button go to the next row
     }
 })
 
