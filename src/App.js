@@ -18,6 +18,7 @@ export default  class App extends Component {
     state= { ...initialState}
 
     addDigit = n => {  //*This will set the value of the button on display
+
         const clearDisplay = this.state.displayValue === '0' || this.state.clearDisplay //*This will change the first value that will be input different than zero and avoid multiple zeros
         if(n === '.' && this.state.displayValue.includes('.') && !clearDisplay) { //* This if will avoid user input more than one dot each input
             return
@@ -31,12 +32,12 @@ export default  class App extends Component {
             const newValue = parseFloat(displayValue) //* This will set a float value of the displayValue
             const values = [...this.state.values] //* Get the array refresh values [... this 3 dots create a clone of the variable set]
             values[this.state.current] = newValue //* saving the value in the array
-            this.setState({ values})
+            this.setState({ values })
         }
     }
 
     clearMemory = () => {
-        this.setState({ ...initialState}) //* This will clear the value on display and set 0 
+        this.setState({...initialState}) //* This will clear the value on display and set 0 
     }
 
     setOperation = operation => {
@@ -75,11 +76,11 @@ export default  class App extends Component {
                 <Display value={this.state.displayValue}/>
                 <View style={styles.buttons}>
                     <Button label='AC' triple onClick={this.clearMemory}/>
-                    <Button label='÷' operation onClick={this.setOperation}/>
+                    <Button label='÷' operation onClick={() => this.setOperation('/')}/>
                     <Button label='7' onClick={this.addDigit}/>
                     <Button label='8' onClick={this.addDigit}/>
                     <Button label='9' onClick={this.addDigit}/>
-                    <Button label='X' operation onClick={this.setOperation}/>
+                    <Button label='X' operation onClick={() => this.setOperation('*')}/>
                     <Button label='4' onClick={this.addDigit}/>
                     <Button label='5' onClick={this.addDigit}/>
                     <Button label='6' onClick={this.addDigit}/>
